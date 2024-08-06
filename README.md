@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+### Test Automation of the login process done on `login.cy.js` of `App.js`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+Check Page Elements: 
+Verifies that the login page on App.js is displayed by checking the presence of the heading.
 
-## Available Scripts
+Invalid Login:
+Enters incorrect credentials.
+Clicks the login button.
+Asserts that the error message is visible and contains the correct text.
 
-In the project directory, you can run:
+Valid Login:
+Enters correct credentials.
+Clicks the login button.
+Asserts that an alert with the text "Login successful" is displayed.
+Checks that no error message is displayed.
 
-### `npm start`
+Handle Empty Input Fields:
+Clicks the login button without entering any credentials.
+Asserts that the error message is visible and contains the correct text.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Handle Only Username Input:
+Enters only the username.
+Clicks the login button.
+Asserts that the error message is visible and contains the correct text.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Handle Only Password Input:
+Enters only the password.
+Clicks the login button.
+Asserts that the error message is visible and contains the correct text.
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Performance Testing
+#### Designing a Performance Test for Simultaneous Order Placement
 
-### `npm run build`
+```
+Design:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Identify Key Scenarios: Multiple users placing orders simultaneously.
+Set Up Test Environment: Ensure a staging environment that mimics production.
+Create Test Scripts: Simulate users placing orders using a performance testing tool.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tools:
 
-### `npm run eject`
+JMeter: Open-source tool that simulates a heavy load on a server, group of servers, network, or object to test its strength or analyze overall performance under different load types.
+Gatling: Provides advanced load testing scenarios, and its scripting language allows for detailed performance testing.
+Locust: Python-based tool for easy and scalable load testing.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Why:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+JMeter: Well-established, with extensive community support and plugins.
+Gatling: Scala-based DSL allows for detailed and maintainable test scripts.
+Locust: Easy to write and scale test scripts with Python, JavaScript etc.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Example of JMeter Test Plan
+Thread Group: Simulate multiple users.
+HTTP Request: Simulate the order placement request.
+Assertions: Check for successful responses and errors.
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### API Testing
+#### Test an API Endpoint to Retrieve the List of Available Restaurants
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
 
-### Analyzing the Bundle Size
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Database Testing
+#### Verify Data Integrity and Consistency
 
-### Making a Progressive Web App
+```javascript
+    
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### End-to-End Testing
+#### User Journey: Search for a Restaurant, Place an Order, Make a Payment, Receive Order Confirmation
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```javascript
+    
+```
