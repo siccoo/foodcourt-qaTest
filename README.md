@@ -1,4 +1,6 @@
-### Test Automation of the login process done on `login.cy.js` of `App.js`
+# FoodCourt QA Engineer Assessment
+
+### Test Automation of the login process done on `login.cy.js` of `App.js` using cypress automation tool
 
 ```
 Check Page Elements: 
