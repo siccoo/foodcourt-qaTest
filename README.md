@@ -3,7 +3,7 @@
 ### Test Automation of the login process done on `login.cy.js` of `App.js` using cypress automation tool
 
 ```
-Check Page Elements: 
+Check Page Elements:
 Verifies that the login page on App.js is displayed by checking the presence of the heading.
 
 Invalid Login:
@@ -32,59 +32,125 @@ Clicks the login button.
 Asserts that the error message is visible and contains the correct text.
 ```
 
-
 ### Performance Testing
-#### Designing a Performance Test for Simultaneous Order Placement
+
+#### Create a test case for Order Placement with Configuring Multiple Users.
 
 ```
 Design:
 
-Identify Key Scenarios: Multiple users placing orders simultaneously.
-Set Up Test Environment: Ensure a staging environment that mimics production.
-Create Test Scripts: Simulate users placing orders using a performance testing tool.
+One of the Key Scenarios: Multiple users add some product in cart with multiple request then placing order simultaneously.
+
+Set Up Test Environment: Have a staging environment that looks exactly like your production.
+
+Write Test Scripts: Execute users ordering and add orders to the cart using a load testing tools.
 
 
 Tools:
 
-JMeter: Open-source tool that simulates a heavy load on a server, group of servers, network, or object to test its strength or analyze overall performance under different load types.
-Gatling: Provides advanced load testing scenarios, and its scripting language allows for detailed performance testing.
-Locust: Python-based tool for easy and scalable load testing.
+Apache JMeter: Open source software, designed to load test functional behavior and measure performance.
+
+Gatling: Support for complex load testing scenarios, tidy performance testing due to its scripting language.
+
+Locust: the easy and scalable way to test your code
 
 
 Why:
 
-JMeter: Well-established, with extensive community support and plugins.
-Gatling: Scala-based DSL allows for detailed and maintainable test scripts.
-Locust: Easy to write and scale test scripts with Python, JavaScript etc.
+JMeter: Classic and intuitive, with a broad user community and libraries.
+
+Gatling: Scala Library for the most expressive and expedition test scenarios, ever.
+
+Locust — simple load-testing framework
 
 
 Example of JMeter Test Plan
-Thread Group: Simulate multiple users.
-HTTP Request: Simulate the order placement request.
-Assertions: Check for successful responses and errors.
+
+Thread Group: Simulate more user
+
+HyperText Transfer Protocol request: Order placement in this case is the http order.
+
+Assertions -- whether the responses were successful or errors.
 ```
 
 ### API Testing
+
 #### Test an API Endpoint to Retrieve the List of Available Restaurants
 
 ```
+Positive Test Cases:
 
+Valid Request:
+Send a GET request to /api/restaurants.
+Assert the status code is 200.
+Assert the response contains a list of restaurants with valid details (e.g., name, location, cuisine).
+
+
+Negative Test Cases:
+
+Invalid Endpoint:
+Send a GET request to /api/nonexistent.
+Assert the status code is 404.
+Assert the response contains an appropriate error message.
+
+Unauthorized Access:
+Send a GET request to /api/restaurants without authentication if the endpoint requires it.
+Assert the status code is 401.
+Assert the response contains an appropriate error message.
+
+
+Example using Postman/Newman
+Create Collection: Add requests for positive and negative scenarios.
+Run Collection: Use Newman to run the collection and generate reports.
 ```
 
 ```javascript
+// Postman request example
+{
+  "info": {
+    "name": "Restaurant API Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/restaurants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "restaurants"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
+
+
 
 ```
 
 ### Database Testing
+
 #### Verify Data Integrity and Consistency
 
 ```javascript
-    
+
 ```
 
 ### End-to-End Testing
+
 #### User Journey: Search for a Restaurant, Place an Order, Make a Payment, Receive Order Confirmation
 
 ```javascript
-    
+
 ```
